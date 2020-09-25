@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: mint-ui-ingress
+spec:
+  rules:
+  - host: dev.mint.mosorio.dev
+    http:
+      paths:
+      - backend:
+          serviceName: mint-ui
+          servicePort: 80

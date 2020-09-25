@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mint-ui
+  namespace: develop
+  labels:
+    app: mint-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mint-ui
+  template:
+    metadata:
+      labels:
+        app: mint-ui
+    spec:
+      containers:
+        - name: mint-ui
+          image: mintproject/ui:bea7bf
+          ports:
+            - containerPort: 80
+              name: http

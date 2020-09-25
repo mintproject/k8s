@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ensemble-ingress
+spec:
+  rules:
+  - host: dev.ensemble.mint.mosorio.dev
+    http:
+      paths:
+      - backend:
+          serviceName: ensemble
+          servicePort: 3000
